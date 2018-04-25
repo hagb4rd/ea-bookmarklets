@@ -1,8 +1,8 @@
 {
   "name": "ea-bookmarklets",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "bookmarklets, javascript, collection, server, endpoint",
-  "main": "./index.js",
+  "main": "./server.js",
   "scripts": {
     "start": "node server.js"
   },

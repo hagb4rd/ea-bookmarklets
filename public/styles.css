@@ -1,0 +1,318 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+
+:root {
+    --contrast-color: #0095DD;
+    --contrast-color-over: #00539F;
+    --contrast-color-translucid: rgba(0, 149, 221, 0.7);
+    --contrast-color-over-translucid: rgba(0, 83, 159, 0.7);
+
+    --bg-color: #f6f4ec;
+    --bg-color-shadow: #d7d3c8;
+
+    --text-color: #000;
+    --text-color-contrast: #fff;
+
+    --highlight: rgba(255, 255, 255, 0.9);
+    --highlight-subtle: rgba(255, 255, 255, 0.5);
+    --shadow: rgba(0, 0, 0, 0.2);
+    --dark-shadow: rgba(0, 0, 0, 0.6);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 1em;
+    margin: 0;
+    line-height: 1.3em;
+    background: linear-gradient(to top, var(--bg-color-shadow) 0%, var(--bg-color) 100%) center center repeat;
+}
+
+body, html {
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+code, pre {
+  font-family: Courier, 'Courier New', monospace;
+  font-size: 1rem;
+}
+
+code {
+  color: #666;
+}
+
+a {
+    color: var(--contrast-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--contrast-color-over);
+    text-decoration: underline;
+}
+
+a.button {
+    display: inline-block;
+    color: var(--text-color-contrast);
+    text-decoration: none;
+    line-height: 1.25rem;
+    box-sizing: border-box;
+}
+
+button, a.button {
+    border: 0;
+    background: var(--contrast-color);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    transition: background 0.2s ease;
+}
+
+button:active, button:hover, a.button:active, a.button:hover {
+    background: var(--contrast-color-over);
+}
+
+button[disabled] {
+    background: #ccc;
+    color: #666;
+}
+
+button[disabled]:hover {
+    cursor: not-allowed;
+}
+
+
+p, li {
+  margin: 1em 0;
+}
+
+li, dt, dd {
+    margin: 0.8em 0;
+}
+
+dd {
+    margin-left: 2em;
+}
+
+input[type=range], input[type=color] {
+    vertical-align: bottom;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    text-shadow: 0 1px 0 var(--highlight);
+    color: #484848;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1.25em;
+}
+
+iframe {
+    border: none;
+    overflow: scroll;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* layout */
+/* ---------------------------------------------------------------------------*/
+
+body.index {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.page-wrapper {
+    display: flex;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+.sidebar {
+    flex: 0 0 auto;
+    border-right: 4px solid var(--shadow);
+    width: 280px;
+    box-sizing: border-box;
+    padding: 0em 1em 1em 1em;
+    text-align: center;
+}
+
+.viewer-wrapper {
+    flex: 1 1 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.viewer {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute; /* chrome doesn't just like height:100% :( */
+}
+
+/* helpers */
+.panel {
+    border-bottom: 2px solid var(--shadow);
+    border-right: 2px solid var(--shadow);
+    border-top: 2px solid var(--highlight);
+    margin: 2em 0;
+    padding: 1.5em;
+    background: var(--bg-color);
+}
+
+.panel > *:first-child, .panel > header > * {
+    margin-top: 0;
+}
+
+main.constrained {
+    max-width: 900px;
+    margin: 0 2em;
+}
+
+.burger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 10;
+}
+
+.burger button {
+    padding: 0.2em;
+}
+
+.burger button, .view-source a {
+    background: var(--contrast-color-translucid);
+}
+
+.burger button:hover, .view-source a:hover {
+    background: var(--contrast-color-over-translucid);
+}
+
+.view-source {
+    position: fixed;
+    top: 0.5em;
+    right: 0.5em;
+    z-index: 10;
+    display: none;
+}
+
+.view-source a:not(href~=http) {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    .mobile-show {
+        display: block;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    body {
+        padding-top: 2em;
+    }
+    .page-wrapper {
+        display: block;
+        min-height: 0;
+    }
+    .sidebar {
+        width: 100%;
+        border: none;
+    }
+    .viewer-wrapper {
+        height: 100vh;
+    }
+    .viewer-wrapper:not(.mobile-show) {
+        display: none;
+    }
+}
+
+/* ---------------------------------------------------------------------------*/
+/* main menu */
+/* ---------------------------------------------------------------------------*/
+p.tagline {
+    margin-top: -1em;
+}
+.menu {
+    text-align: left;
+    background: var(--bg-color);
+}
+
+.menu ul {
+    padding-left: 0;
+}
+.menu li {
+    display: block;
+    line-height: 1.4em;
+    border-bottom: 2px solid var(--shadow);
+    border-top: 2px solid var(--highlight);
+    margin: 0;
+}
+
+.menu a {
+    padding: 1em;
+    display: block;
+}
+
+.menu a:hover {
+    text-decoration: none;
+    background: var(--highlight-subtle);
+}
+
+.sidebar .button {
+    width: 100%;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* custom tabzilla */
+/* ---------------------------------------------------------------------------*/
+
+#tabzilla {
+    float: none;
+}
+
+#tabzilla a {
+    box-shadow: none;
+    margin: 0 auto;
+}
+
+#tabzilla a:hover {
+    background-color: transparent;
+}
+
+#tabzilla:hover:before{
+    background-color: #C13832;
+}
+
+#tabzilla:before {
+    background: #4D4E53;
+    left: 50%;
+    margin-left: -44px;
+}
+/* ---------------------------------------------------------------------------*/
+/* no browser support warning banner
+/* ---------------------------------------------------------------------------*/
+
+.no-support {
+    background: var(--bg-color-shadow);
+    padding: 1em;
+}
+
+/* ---------------------------------------------------------------------------*/
+/* custom syntax highlight */
+/* ---------------------------------------------------------------------------*/
+pre[class*="language-"] {
+    background: var(--highlight-subtle);
+    margin: 1em 0;
+}

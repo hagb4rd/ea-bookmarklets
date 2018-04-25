@@ -1,0 +1,29 @@
+{
+  "name": "ea-bookmarklets",
+  "version": "1.0.7",
+  "description": "bookmarklets, javascript, collection, server, endpoint",
+  "main": "./index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hagb4rd/ea-bookmarklets.git"
+  },
+  "keywords": [
+    "bookmarklets",
+    "javascript",
+    "browser",
+    "minify",
+    "url"
+  ],
+  "author": "hagb4rd@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hagb4rd/ea-bookmarklets/issues"
+  },
+  "homepage": "https://github.com/hagb4rd/ea-bookmarklets#readme",
+  "dependencies": {
+    "md5": "^2.2.1"
+  }
+}

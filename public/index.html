@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ea-bookmarklets</title>
+<script>
+var require = {
+    //baseUrl: "./",
+    shim: {
+        'ace': {
+            exports: 'ace'
+        },
+        'webkit': {
+            exports: "lib"
+        }
+    },
+    paths: {
+        "webkit": "https://unpkg.com/ea-webkit@1.0.10/dist/webkit.min"
+    },
+    waitSeconds: 0
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js"></script>
+<style type="text/css" media="screen">
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: #000;
+        color: #eee;
+        width: 100%;
+        height: 100%;
+        
+    }
+    #editor { 
+        position: relative;
+        width: 100%;
+        height: 480px;
+    }
+    #panel {
+        width: 640px;
+        margin: 0 auto;
+    }
+    #createBtn {
+        font-size: 14px;
+        width: 100%;
+        border: 2px solid black;
+        text-align: center;
+    }
+    #createBtn:hover {
+        border: 2px solid white;
+    }
+</style>
+</head>
+<body>
+<div id="panel">
+<button id="createBtn">create bookmarklet</button>
+<div id="editor">function foo(items) {
+    var x = "All this is syntax highlighted";
+    return x;
+}</div>
+<pre id="Log"></pre> 
+</div>
+
+
+
+
+<script>
+require(['webkit'], function(webkit) {
+    //log
+    var log = (s) => { console.log(s); Log.innerHTML += ( s + "<br>\r\n"); return s; };
+    //bookmarklet
+    var bookmarklet = webkit.bookmarklet;
+
+
+    //init ACE Editor
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+
+
+    createBtn.addEventListener('click', function() { 
+        var {code, options} = bookmarklet.parseFile(editor.session.getValue());
+        var marklet = bookmarklet.convert(code, options);
+        var link = document.querySelector("a")||document.createElement("a");
+        link.href = `javascript:${marklet}`;
+        link.innerHTML = "drag me"
+        panel.appendChild(link);
+    });
+
+    // __DEBUG:
+    // The goal: Bookmarklet
+    editor.session.setValue(bookmarklet.toFile());
+});
+
+</script>
+</body>
+</html>

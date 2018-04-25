@@ -1,6 +1,6 @@
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 
-var http =  require("http");
+var http =  require("https");
 var api = require("./endpoint");
 
 var server = http.createServer(api).listen(port);

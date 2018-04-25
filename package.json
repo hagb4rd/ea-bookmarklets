@@ -1,6 +1,6 @@
 {
   "name": "ea-bookmarklets",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "bookmarklets, javascript, collection, server, endpoint",
   "main": "./index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hagb4rd/ea-bookmarklets.git"
+    "url": "https://github.com/hagb4rd/ea-bookmarklets.git"
   },
   "keywords": [
     "bookmarklets",

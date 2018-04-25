@@ -1,0 +1,8 @@
+{
+  "name": "ea-bookmarklets",
+  "description": "A Node.js app for creating bookmarklets",
+  "repository": "https://github.com/hagb4rd/ea-bookmarklets",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku", "boomarklets"],
+  "image": "heroku/nodejs"
+}

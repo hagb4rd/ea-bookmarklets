@@ -1,0 +1,6 @@
+{
+    "webkit": "https://unpkg.com/ea-webkit@latest/dist/webkit.min.js",
+    "require.js": "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js",
+    "ace": "https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js",
+    "imgur.embed":"s.imgur.com/min/embed.js"
+}

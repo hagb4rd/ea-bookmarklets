@@ -1,6 +1,6 @@
 {
   "name": "ea-bookmarklets",
-  "version": "1.0.13",
+  "version": "1.0.15",
   "description": "bookmarklets, javascript, collection, server, endpoint",
   "main": "./server.js",
   "engines": {
@@ -14,7 +14,9 @@
     "url": "git+https://github.com/hagb4rd/ea-bookmarklets.git"
   },
   "keywords": [
-    "bookmarklets",
+    "bookmarklet",
+    "editor",
+    "inject",
     "javascript",
     "browser",
     "minify",

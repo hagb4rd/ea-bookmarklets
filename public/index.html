@@ -2002,8 +2002,15 @@
 	<script language="JavaScript">var cs = new ColorSphereBackground([{ element: document.querySelector('#footer') }]);</script>
 	<script>
 	document.addEventListener('DOMContentLoaded',()=>{
-		$.toolbox();
-		
+		var _uri=new URL(location.href);
+		var url=_uri.searchParams.get('url');
+		var file=_uri.searchParams.get('file');
+		if(url)
+			url=decodeURIComponent(url);
+		if(file)
+			file=decodeURIComponent(file);
+
+		$.toolbox(url,file);		
 	});
 	</script>
 </body>

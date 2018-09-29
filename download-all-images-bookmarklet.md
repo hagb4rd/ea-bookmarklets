@@ -1,5 +1,3 @@
-### ea-bookmarklets 
-[https://ctrld.herokuapp.com](https://ctrld.herokuapp.com)
 
 Aye
 
@@ -13,9 +11,6 @@ Aye
 * Drag appeaering ink to your bookmarks toolbar.
 * Eventually Edit Label
 * Have fun!
-
-
-
 
 Make sure your download folder is set properly in the browser settings. 
 It's recommended to set the browser to download files automtically in order to prevent dialogue pop-ups!
@@ -147,24 +142,4 @@ Note: Should you copy paste it into your location bar, you'll probably have to r
 `javascript:(function(){var s=document.createElement("script");s.src="data:application/javascript;data:application/javascript;base64,KGZ1bmN0aW9uKCkgeyAKICBmdW5jdGlvbiB4b3JTdHJpbmcocyl7IHJldHVybiBbLi4uU3RyaW5nKHMpXS5yZWR1Y2UoKHByZXYsIG5leHQpID0+IHByZXYgXj0gbmV4dC5jaGFyQ29kZUF0KDApLCAweEZGKSB9OwogIGZ1bmN0aW9uIGxvYWRTY3JpcHQodXJsKXsKICAgIHJldHVybiBuZXcgUHJvbWlzZSgocmVzb2x2ZSxyZWplY3QpPT57CiAgICAgICAgdmFyIGlkPSdtaycreG9yU3RyaW5nKHVybCk7CiAgICAgICAgdmFyIGVsZW09ZG9jdW1lbnQucXVlcnlTZWxlY3RvcignIycraWQpOwogICAgICAgIGlmKGVsZW0pIHsKICAgICAgICAgICAgcmVzb2x2ZShlbGVtKTsKICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgIGVsZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsKICAgICAgICAgICAgICBlbGVtLnNldEF0dHJpYnV0ZSgnYXN5bmMnLCcnKTsKICAgICAgICAgICAgICBlbGVtLnNyYz11cmw7CiAgICAgICAgICAgICAgZWxlbS5pZD1pZDsKICAgICAgICAgICAgICBlbGVtLmFkZEV2ZW50TGlzdGVuZXIoJ2xvYWQnLChlKT0+cmVzb2x2ZShlKSk7CiAgICAgICAgICAgICAgZWxlbS5hZGRFdmVudExpc3RlbmVyKCdlcnJvcicsKGUpPT5yZWplY3QoZSkpOwogICAgICAgIH0KICAgICAgICAoZG9jdW1lbnQuaGVhZCB8fCBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdIHx8IGRvY3VtZW50LmRvY3VtZW50RWxlbWVudCkuYXBwZW5kQ2hpbGQoZWxlbSk7ICAgICAgICAgICAgIAogICAgfSkKICB9OwogIHZhciBtYWluPWFzeW5jKCk9PnsKCXRyeSB7CgkJdmFyIGNkbiA9IHsKCQkJJyQnOiAnaHR0cHM6Ly9jZG4ucmF3Z2l0LmNvbS9oYWdiNHJkL2VhLXdlYmtpdC9tYXN0ZXIvZGlzdC93ZWJraXQubWluLmpzJywKCQkJJ3JlcXVpcmVqcyc6J2h0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL3JlcXVpcmUuanMvMi4zLjUvcmVxdWlyZS5taW4uanMnLAoJCQknYWNlJzonaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvYWNlLzEuMy4zL2FjZS5qcycKCQl9OwoJCWF3YWl0IGxvYWRTY3JpcHQoY2RuWyckJ10pOwoJCWF3YWl0IGxvYWRTY3JpcHQoY2RuWydoeXBlcmh0bWwnXSk7CgkJY29uc29sZS5sb2coT2JqZWN0LmdldE93blByb3BlcnR5TmFtZXMoJCkuc29ydCgkLmNtcC5sb2NhbGUpKTsKCX0gY2F0Y2ggKGUpIHsKCQljb25zb2xlLmxvZyhlKQogIH0KICAvL2NyZWF0ZXMgdGhpcyBib29rbWFya2xldCBlZGl0b3IgOm8gCgkkLnRvb2xib3goKTsKfTsKbWFpbigpLmNhdGNoKGNvbnNvbGUubG9nKTsJCQp9KSgp";document.body.append(s)})()`
 
 
-
-### ATTENTION: first commit .. work in progress
-
-
-
-### Run Server
-
-```bash
-# install
-npm install ea-bookmarklets
-
-# port 3000
-node server.js 3000
-``````
-
-
-run without parameter and click on the link to see example work
-
-## [http://localhost:3000/](http://localhost:3000/)
-
-
+cu

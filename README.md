@@ -44,7 +44,7 @@ Geg this one here too. This bookmarklet loads that "toolbox" with the Bookmarkle
 
 Planning to put more bookmarklets in that gist here:
 
-(https://gist.github.com/hagb4rd/6843803a6674fe1b9ead6f1e60f14f15)[https://gist.github.com/hagb4rd/6843803a6674fe1b9ead6f1e60f14f15]
+https://gist.github.com/hagb4rd/6843803a6674fe1b9ead6f1e60f14f15
 
 
 ##### Download-All-Images Code

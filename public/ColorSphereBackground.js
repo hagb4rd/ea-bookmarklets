@@ -112,3 +112,9 @@ var ColorSphereBackground = function(params) {
 		this.create(params[n]);
 	}
 };
+
+ColorSphereBackground.element = function(target) {
+	target=target||document.rootElement;
+	var csb = new ColorSphereBackground([{ element: target }]);
+	return csb;
+}

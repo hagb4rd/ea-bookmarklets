@@ -16,6 +16,7 @@ tmp
 coverage
 # API keys
 .env
+locale.js
 
 # Dependency directory
 node_modules

@@ -1,11 +1,13 @@
 //do not overwrite. setup locale below.
 var defaultConfig={
-  sessionSecret: "hello kit",
+  sessionSecret: "hello kity",
   port: process.env["PORT"] || 3000
 };
 
 //require locale config file 
-var locale={}
+var locale={
+
+}
 
 //locale=require('./locale');
 

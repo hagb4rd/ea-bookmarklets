@@ -1,6 +1,6 @@
 {
   "name": "ea-bookmarklets",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "bookmarklets, javascript, collection, server, endpoint",
   "main": "./server.js",
   "engines": {

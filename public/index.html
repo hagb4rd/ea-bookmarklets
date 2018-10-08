@@ -109,7 +109,7 @@
 		var _uri=new URL(location.href);
 		var url=_uri.searchParams.get('url');
 		var file=_uri.searchParams.get('file');
-		url=url||'https://gist.github.com/hagb4rd/6843803a6674fe1b9ead6f1e60f14f15';
+		url=url||'https%3A%2F%2Fgist.github.com%2Fhagb4rd%2F6843803a6674fe1b9ead6f1e60f14f15%23file-toolbox-js';
 
     file=file||'toobox.js';
 		if(url)
@@ -132,7 +132,8 @@
 				if(location.hash) {
 						hashChange();
 				} else {
-					location.hash = url||encodeURIComponent('https://gist.github.com/hagb4rd/6843803a6674fe1b9ead6f1e60f14f15#file-toolbox-js')
+					location.hash = url;
+					hashChange();
 				}
 				
 

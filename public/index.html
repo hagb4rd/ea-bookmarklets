@@ -110,17 +110,32 @@
 		var url=_uri.searchParams.get('url');
 		var file=_uri.searchParams.get('file');
 		url=url||'https://gist.github.com/hagb4rd/6843803a6674fe1b9ead6f1e60f14f15';
+
     file=file||'toobox.js';
 		if(url)
 			url=decodeURIComponent(url);
 		if(file)
 			file=decodeURIComponent(file);
+		
+		var hashChange = () => {
+			$.gist.file(decodeURIComponent(location.hash.slice(1))).then(file=>{ editor.session.setValue(file.content) })
+		}
 
-		$.toolbox(url,file)
+		$.toolbox()
 			.then(({editor, btnToolbox,btnBookmarklet})=>{
 				btn=document.querySelector('#bToolbox');
 				btnBookmarklet=document.querySelector('#_btnBookmarklet');
 				
+				window.onhashchange=hashChange;
+
+
+				if(location.hash) {
+						hashChange();
+				} else {
+					location.hash = url||encodeURIComponent('https://gist.github.com/hagb4rd/6843803a6674fe1b9ead6f1e60f14f15#file-toolbox-js')
+				}
+				
+
 				//firelayer
 				firelayer=$.create('video', { 
 					id: "_firelayer",

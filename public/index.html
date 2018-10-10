@@ -103,42 +103,41 @@
 <body>
 <div id="footer"></div>
 <script language="JavaScript">
-	var btn, btnBookmarklet, firelayer;
-	document.addEventListener('DOMContentLoaded',()=>{
-		//ColorSphereBackground(document.querySelector('#footer'));
-		var _uri=new URL(location.href);
-		var url=_uri.searchParams.get('url');
-		var file=_uri.searchParams.get('file');
-		url=url||'https%3A%2F%2Fgist.github.com%2Fhagb4rd%2F6843803a6674fe1b9ead6f1e60f14f15%23file-toolbox-js';
-
-    file=file||'toobox.js';
-		if(url)
-			url=decodeURIComponent(url);
-		if(file)
-			file=decodeURIComponent(file);
-		
-		var hashChange = () => {
-			$.gist.file(decodeURIComponent(location.hash.slice(1))).then(file=>{ editor.session.setValue(file.content) })
-		}
-
+	
+	document.addEventListener('DOMContentLoaded',() => {
+	
 		$.toolbox()
-			.then(({editor, btnToolbox,btnBookmarklet})=>{
-				btn=document.querySelector('#bToolbox');
-				btnBookmarklet=document.querySelector('#_btnBookmarklet');
-				
+			.then(({editor, btnToolbox,btnBookmarklet}) => {
+	
+				//default gist to load 
+				var defaultGistUrl = 'https://gist.github.com/hagb4rd/6843803a6674fe1b9ead6f1e60f14f15#file-toolbox-js'; 
+	
+				//parse GET query params url and file into github gist link format into location.hash 
+				var _uri=new URL(location.href);
+				var url=_uri.searchParams.get('url')||encodeURIComponent(defaultGistUrl);
+				var file=_uri.searchParams.get('file')||'';
+				if(url)
+					url=decodeURIComponent(url);
+				if(file) {
+					file=decodeURIComponent(file);
+					file=`#file-${file.replace(/\./g,'-')}`;
+					url=url+file;
+				}
+				var hashChange = () => {
+					$.gist.file(decodeURIComponent(location.hash.slice(1))).then(file=>{ editor.session.setValue(file.content) })
+				}
 				window.onhashchange=hashChange;
-
-
 				if(location.hash) {
 						hashChange();
 				} else {
-					location.hash = url;
+					location.hash = encodeURIComponent(url);
 					hashChange();
 				}
-				
-
+	
+				/* --------- FX-------------- */
+	
 				//firelayer
-				firelayer=$.create('video', { 
+				var firelayer=$.create('video', { 
 					id: "_firelayer",
 					src:"/flames2.mp4", 
 					preload:"auto", 
@@ -159,8 +158,8 @@
 						firelayer.classList.add('inactive');	
 					})
 				}
-				
-				
+	
+	
 				firelayer.addEventListener('canplay',firelayer.play.bind(firelayer));
 				firelayer.addEventListener('ended',firelayer.play.bind(firelayer));
 				firelayer.resize=function(e) {
@@ -178,9 +177,9 @@
 					/* */
 					firelayer.classList.toggle('hidden');
 				}
-				
+	
 				firelayer.mouseover=function(e){ 
-						
+	
 						/*
 						document.body.append(firelayer);
 						firelayer.animate([{opacity: 0}, {opacity:1}], {
@@ -218,9 +217,9 @@
 					firelayer.toggle();
 					firelayer.play();
 				});		
+		});
 	});
-});
-	
-</script>
+		
+	</script>
 </body>
 </html>
